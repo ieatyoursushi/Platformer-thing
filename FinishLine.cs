@@ -1,0 +1,18 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+public class FinishLine : MonoBehaviour {
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.name == "Player")
+        {
+            Debug.Log("finish");
+            SceneManager.LoadScene("LevelScreen");
+            PlayerCollide.attemps = 0;
+
+        }
+    }
+}
+
+
